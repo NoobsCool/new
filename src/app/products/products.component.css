@@ -1,0 +1,24 @@
+
+.table{
+  width: 80%;
+  margin: 40px auto;
+}
+.table, th, td {
+  border: 1px solid black;
+  height: 35px;
+}
+td{
+  text-align: center;
+}
+
+th{
+  background-color: #7200C6;
+  color:white;
+}
+
+.create-button{
+  display: flex;
+  position: absolute;
+  right: 5px;
+  margin-top: 5px;
+}

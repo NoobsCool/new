@@ -1,0 +1,36 @@
+<h1 *ngIf="isAddMode">Add Product</h1>
+<h1 *ngIf="!isAddMode">Edit Product</h1>
+
+<form [formGroup]="productForm" class="normal-class">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="style-grid">
+        <mat-form-field>
+          <input formControlName="name" matInput placeholder="Name*" name="name">
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="default_price" matInput placeholder="Price*" name="default_price">
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="description" matInput placeholder="Description*" name="description">
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="product_category" matInput placeholder="Category*">
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="style-grid">
+        <div class="button-class">
+          <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="productForm.invalid">
+            Submit
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

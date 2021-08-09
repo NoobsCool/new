@@ -1,0 +1,33 @@
+<div class="create-button">
+  <button (click)="createProduct()"
+          mat-raised-button ><mat-icon>add</mat-icon>Create
+  </button>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Price</th>
+    <th scope="col">Category</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr >
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of productList">
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.default_price}}</td>
+    <td>{{product.product_category}}</td>
+    <td><button (click)="updateProduct(product.id)"
+                mat-button color="warn"><mat-icon>edit</mat-icon>
+    </button></td>
+    <td><button (click)="onDelete(product.id)"
+      mat-button color="warn"><mat-icon>delete</mat-icon>
+    </button></td>
+  </tr>
+  </tbody>
+</table>
+
+

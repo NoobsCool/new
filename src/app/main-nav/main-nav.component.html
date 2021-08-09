@@ -1,0 +1,18 @@
+<p>
+  <mat-toolbar color="primary">
+    <span class="fill-remaining-space"></span>
+    <span class="header"><mat-icon>shopping_bag</mat-icon>Order Application</span>
+    <span class="fill-remaining-space"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Profile Icon">
+      <mat-icon><span class="material-icons-outlined">
+      account_circle</span></mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon><span class="material-icons-outlined">
+        logout</span></mat-icon>
+        <span>Log out</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</p>

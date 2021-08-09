@@ -1,0 +1,32 @@
+<div class="create-button">
+  <button mat-raised-button (click)="createCustomer()">
+    <mat-icon>add</mat-icon>Create
+  </button>
+</div>
+<table class="table" >
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Firstname</th>
+    <th scope="col">Lastname</th>
+    <th scope="col">Company</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customerList">
+    <td>{{customer.id}}</td>
+    <td>{{customer.first_name}}</td>
+    <td>{{customer.last_name}}</td>
+    <td>{{customer.company_name}}</td>
+    <td>
+      <button (click)="updateCustomer(customer.id)"
+                mat-button color="warn"><mat-icon>edit</mat-icon>
+    </button></td>
+    <td>
+      <button (click)="onDelete(customer.id)"
+              mat-button color="warn"><mat-icon>delete</mat-icon></button></td>
+  </tr>
+  </tbody>
+</table>

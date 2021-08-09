@@ -1,0 +1,30 @@
+<h1 *ngIf="isAddMode">Add User</h1>
+<h1 *ngIf="!isAddMode">Edit User</h1>
+
+<form [formGroup]="userForm" class="normal-class">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="style-grid">
+        <mat-form-field>
+          <input formControlName="first_name" matInput placeholder="First name*" >
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="username" matInput placeholder="Username*" >
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Email*" >
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="style-grid">
+        <div class="button-class">
+          <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="userForm.invalid">Submit</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

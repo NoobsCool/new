@@ -1,0 +1,39 @@
+<div class="create-button">
+  <button mat-raised-button (click)="createOrder()">
+    <mat-icon>add</mat-icon>Create
+  </button>
+</div>
+<table class="table">
+<thead>
+<tr>
+  <th scope="col">Code</th>
+  <th scope="col">Code year</th>
+  <th scope="col">Date registered</th>
+  <th scope="col">Customer</th>
+  <th scope="col">Creator </th>
+  <th scope="col">Order</th>
+  <th scope="col">Product</th>
+  <th scope="col">Amount</th>
+  <th scope="col">Price</th>
+  <th scope="col">Delete</th>
+</tr>
+</thead>
+  <tbody>
+  <ng-container *ngFor="let order of orderList">
+    <tr *ngFor="let unit of order.orderunits">
+      <td>{{order.code}}</td>
+      <td>{{order.code_year}}</td>
+      <td>{{order.date_registered}}</td>
+      <td>{{order.customer}}</td>
+      <td>{{order.creator}}</td>
+      <td>{{unit.order}}</td>
+      <td>{{unit.product}}</td>
+      <td>{{unit.amount}}</td>
+      <td>{{unit.price}}</td>
+      <td><button (click)="onDelete(order.id)"
+              mat-button color="warn"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+  </ng-container>
+</tbody>
+</table>
+

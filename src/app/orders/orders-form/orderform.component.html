@@ -1,0 +1,57 @@
+<h1>Add Order</h1>
+
+<form [formGroup]="orderForm" class="normal-class">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="style-grid">
+        <mat-form-field>
+          <input formControlName="code_year" matInput placeholder="Code year" >
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label >Choose a date</mat-label>
+          <input formControlName="date_registered" matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="customer" matInput placeholder="Customer*" >
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="creator" matInput placeholder="Creator*" >
+          <mat-error>Please complete this field!</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="container">
+        <div class="panel" formGroupName="orderunits">
+        <div class="form-group">
+          <mat-form-field>
+            <input formControlName="product" matInput placeholder="Product*" >
+            <mat-error>Please complete this field!</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field>
+            <input formControlName="amount" matInput placeholder="Amount*" >
+            <mat-error>Please complete this field!</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field>
+            <input formControlName="price" matInput placeholder="Price*" >
+            <mat-error>Please complete this field!</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="style-grid">
+          <div class="button-class">
+            <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" [disabled]="orderForm.invalid">Submit</button>
+          </div>
+        </div>
+        </div>
+      </mat-grid-tile>
+  </mat-grid-list>
+</form>
